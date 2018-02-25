@@ -34,7 +34,7 @@ articles={
 }
 app.get('/:articleName', function (req, res) {
   var articleName=req.params.articleName;
-  res.send(createTemplate(articles[articleName]));
+  res.send(createTemplate(articles[article-two]));
 });
 
 function createTemplate(data){
@@ -43,7 +43,7 @@ function createTemplate(data){
     var date=data.date;
     var content=data.content;
 
-var ArticleTemplate=
+    var ArticleTemplate=
     `<html>
         <head>
             <title>
