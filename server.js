@@ -34,7 +34,7 @@ articles={
 }
 app.get('/:articleName', function (req, res) {
   var articleName=req.params.articleName;
-  res.send(makeTemplate(articles[articleName]));
+  res.send(createTemplate(articles[articleName]));
 });
 
 function createTemplate(data){
