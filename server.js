@@ -33,6 +33,7 @@ articles={
     }
 }
 app.get('/:articleName', function (req, res) {
+  var articleName=req.params.articleName;
   res.send(makeTemplate(articles[articleName]));
 });
 
