@@ -13,11 +13,7 @@ articles={
     title:"Article One",
     heading:"Article One",
     date:"26th January",
-    content:`THIS IS THE CONTENT. I AM NOT CREATIVE ENOGUH TO MAKE ACTUAL CONTENT.THIS IS THE CONTENT. I AM NOT CREATIVE ENOGUH TO MAKE         ACTUAL CONTENT.THIS IS THE CONTENT. I AM NOT CREATIVE ENOGUH TO MAKE ACTUAL CONTENT.
-
-             MORE NON-CREATIVE STUFF.MORE NON-CREATIVE STUFF.MORE NON-CREATIVE STUFF.MORE NON-CREATIVE STUFF.
-
-            AVADA KEDAVRA`
+    content:"First articlee"
     },
     "article-two":{
         title:"Article Two",
@@ -28,7 +24,7 @@ articles={
     "article-three":{
         title:"Article Three",
         heading:"Article Three",
-        date:"14th February",
+        date:"21st February",
         content:"3rd Article"
     }
 }
