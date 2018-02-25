@@ -8,19 +8,69 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+articles={
+    "article-one":{
+    title:"Article One",
+    heading:"Article One",
+    date:"26th January",
+    content:`THIS IS THE CONTENT. I AM NOT CREATIVE ENOGUH TO MAKE ACTUAL CONTENT.THIS IS THE CONTENT. I AM NOT CREATIVE ENOGUH TO MAKE         ACTUAL CONTENT.THIS IS THE CONTENT. I AM NOT CREATIVE ENOGUH TO MAKE ACTUAL CONTENT.
 
-app.get('/article-one', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+             MORE NON-CREATIVE STUFF.MORE NON-CREATIVE STUFF.MORE NON-CREATIVE STUFF.MORE NON-CREATIVE STUFF.
+
+            AVADA KEDAVRA`
+    },
+    "article-two":{
+        title:"Article Two",
+        heading:"Article Two",
+        date:"14th February",
+        content:"2nd Article"
+    },
+    "article-three":{
+        title:"Article Three",
+        heading:"Article Three",
+        date:"14th February",
+        content:"3rd Article"
+    }
+}
+app.get('/:articleName', function (req, res) {
+  res.send(makeTemplate(articles[articleName]));
 });
 
-app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-});
+function createTemplate(data){
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
 
-app.get('/article-three', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
-});
-
+var ArticleTemplate=
+    `<html>
+        <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" content="width-device-width, initial-scale-1">
+            <link href="/ui/style.css" rel="stylesheet" />
+        </head>    
+        <body>
+            <div class="container">
+                <div>
+                    <a href="/">Home</a>
+                </div>
+                <hr>
+                <h3>
+                    ${heading}
+                </h3>
+                <div>
+                    ${date}
+                </div>
+                <div>
+                    ${content}
+                </div>
+            </div>
+        </body>
+    </html>`;
+    return ArticleTemplate
+}
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
