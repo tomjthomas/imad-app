@@ -27,7 +27,7 @@ articles={
         date:"21st February",
         content:"3rd Article"
     }
-}
+};
 
 function createTemplate(data){
     var title=data.title;
